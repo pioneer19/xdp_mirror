@@ -70,4 +70,10 @@ out:
     return xdp_stats_record_action(ctx, action);
 }
 
+SEC("xdp_drop")
+int  xdp_drop_func(struct xdp_md *ctx)
+{
+        return XDP_DROP;
+}
+
 char _license[] SEC("license") = "GPL";
